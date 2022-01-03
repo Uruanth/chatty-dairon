@@ -25,11 +25,8 @@ export class Chat extends Component {
     this.setState({ readError: null });
     try {
 
-
-
       onValue(ref(db), (snapshot) => {
         const data = snapshot.val();
-        chats.push(Object.values(data.chats));
         let chats = Object.values(data.chats);
         this.setState({ chats });
         console.log(this.state.chats)
